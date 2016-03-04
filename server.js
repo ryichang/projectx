@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/projectx');
 
 // signup route with placeholder response
 app.get('/signup', function(req, res){
-	res.send('signup coming soon');
+	res.render('signup');
 });
 
 // login route with placeholder response
