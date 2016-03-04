@@ -4,7 +4,8 @@
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
-	mongoose = require('mongoose');
+	mongoose = require('mongoose'),
+	User = require('./models/user');
 
 // middleware
 app.use(express.static('public'));
@@ -20,6 +21,14 @@ app.get('/signup', function(req, res){
 // login route with placeholder response
 app.get('/login', function(req, res){
 	res.send('login coming soon');
+});
+
+// Sign up route - creates a new user with a secure password
+app.post('/users', function (req, res) {
+  // use the email and password to authenticate here
+  User.createSecure(req.body.email, req.body.password, function (err, user) {
+    res.json(user);
+  });
 });
 
 // listen on port 3000
