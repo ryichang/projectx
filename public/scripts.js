@@ -8,3 +8,15 @@ console.log(signupData);
 $.post('/users', signupData, function(response){
 	console.log(response);
 });
+
+$('#login-form').on('submit', function(e){
+	e.preventDefault();
+
+	//select the form and serialize data
+	var loginData = $(this).serialize();
+	//send POST request to /login with the form data
+	$.post('/login', loginData, function(response){
+		console.log(response);
+	});
+
+});

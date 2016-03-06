@@ -20,7 +20,7 @@ app.get('/signup', function(req, res){
 
 // login route with placeholder response
 app.get('/login', function(req, res){
-	res.send('login coming soon');
+	res.render('login');
 });
 
 // Sign up route - creates a new user with a secure password
