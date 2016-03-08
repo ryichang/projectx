@@ -34,6 +34,25 @@ var UserModel = this;
   });
 };
 
+//authenticate user (when user logs in)
+userSchema.statics.authenticate = function (email, password, callback) {
+	//find user by email entered at log in
+	this.findOne({email: email}, function (err, foundUser) {
+		console.log(foundUser);
+
+	// throw error if can't find user
+	if (!foundUser) {
+		console.log('No user with email ' + email);
+		callback("Error: no user found", null); //better error structures are available, but a string is good enough
+		// if a user is found, check if password is correct
+	} else if (foundUser.checkPassword(password)) {
+		callback(null, foundUser);
+	} else {
+		callback("Error: incorrect password", null);
+	}
+	});
+};
+
 //compare password user enters with hashed password ('passwordDigest')
 userSchema.methods.checkPassword = function (password) {
 	// run hashing algorithm (with salt) on password user enters in order to compare with 'passwordDigest'
