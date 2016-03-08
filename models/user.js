@@ -34,6 +34,11 @@ var UserModel = this;
   });
 };
 
+//compare password user enters with hashed password ('passwordDigest')
+userSchema.methods.checkPassword = function (password) {
+	// run hashing algorithm (with salt) on password user enters in order to compare with 'passwordDigest'
+	return bcrypt.compareSync(password, this.passwordDigest);
+};
 // define user model
 var User = mongoose.model('User', UserSchema);
 
