@@ -63,6 +63,14 @@ app.post('/sessions', function (req,res) {
 	});
 });
 
+// Logout route
+app.get('/logout', function (req, res) {
+  // remove the session user id
+  req.session.userId = null;
+  // redirect to login (for now)
+  res.redirect('/login');
+});
+
 // listen on port 3000
 app.listen(3000, function(){
 	console.log('server is alive on localhost:3000');
