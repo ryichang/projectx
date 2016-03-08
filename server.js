@@ -47,7 +47,6 @@ app.post('/users', function (req, res) {
   });
 });
 
-req.session.userId = user._id;
 
 //authenticate the user and set the session
 app.post('/sessions', function (req,res) {
