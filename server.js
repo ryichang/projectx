@@ -5,13 +5,21 @@ var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
-	User = require('./models/user');
+	User = require('./models/user'),
+	session = require('express-session');
 
 // middleware
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect('mongodb://localhost/projectx');
+// set session options
+app.use(session({
+  saveUninitialized: true,
+  resave: true,
+  secret: 'SuperSecretCookie',
+  cookie: { maxAge: 30 * 60 * 1000 } // 30 minute cookie lifespan (in milliseconds)
+}));
 
 // signup route with placeholder response
 app.get('/signup', function(req, res){

@@ -35,7 +35,7 @@ var UserModel = this;
 };
 
 //authenticate user (when user logs in)
-userSchema.statics.authenticate = function (email, password, callback) {
+UserSchema.statics.authenticate = function (email, password, callback) {
 	//find user by email entered at log in
 	this.findOne({email: email}, function (err, foundUser) {
 		console.log(foundUser);
@@ -54,7 +54,7 @@ userSchema.statics.authenticate = function (email, password, callback) {
 };
 
 //compare password user enters with hashed password ('passwordDigest')
-userSchema.methods.checkPassword = function (password) {
+UserSchema.methods.checkPassword = function (password) {
 	// run hashing algorithm (with salt) on password user enters in order to compare with 'passwordDigest'
 	return bcrypt.compareSync(password, this.passwordDigest);
 };
