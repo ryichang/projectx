@@ -31,6 +31,14 @@ app.get('/login', function(req, res){
 	res.render('login');
 });
 
+// show user profile page
+app.get('/profile', function (req, res) {
+  // find the user currently logged in
+  User.findOne({_id: req.session.userId}, function (err, currentUser) {
+    res.render('profile.ejs', {user: currentUser})
+  });
+});
+
 // Sign up route - creates a new user with a secure password
 app.post('/users', function (req, res) {
   // use the email and password to authenticate here
@@ -38,6 +46,8 @@ app.post('/users', function (req, res) {
     res.json(user);
   });
 });
+
+req.session.userId = user._id;
 
 //authenticate the user and set the session
 app.post('/sessions', function (req,res) {
