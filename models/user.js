@@ -1,3 +1,15 @@
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema,
+  bcrypt = require('bcrypt');
+
+var userSchema = new Schema({
+  email: { type: String,
+            required: true,
+            unique: true
+          },
+  passwordDigest: String
+});
+
 // use form data to create db user, with a hashed and salted password
 userSchema.statics.createSecure = function (email, password, callback) {
   // `this` references our User model
