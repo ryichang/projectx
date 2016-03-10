@@ -35,15 +35,16 @@ app.get('/login', function(req, res){
 app.get('/profile', function (req, res) {
   // find the user currently logged in
   User.findOne({_id: req.session.userId}, function (err, currentUser) {
-    res.render('profile.ejs', {user: currentUser})
+    res.render('profile.ejs', {user: currentUser});
   });
 });
 
 // Sign up route - creates a new user with a secure password
 app.post('/users', function (req, res) {
   // use the email and password to authenticate here
-  User.createSecure(req.body.email, req.body.password, function (err, user) {
-    res.json(user);
+  User.createSecure(req.body.email, req.body.password, function (err, newUser) {
+    req.session.userId = newUser._id;
+    res.redirect('/profile');
   });
 });
 
