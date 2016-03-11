@@ -6,7 +6,9 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
 	User = require('./models/user'),
-	session = require('express-session');
+	session = require('express-session'),
+  http = require('http').Server(app),
+  io = require('socket.io')(http);
 
 // middleware
 app.use(express.static('public'));
@@ -20,6 +22,19 @@ app.use(session({
   secret: 'SuperSecretCookie',
   cookie: { maxAge: 30 * 60 * 1000 } // 30 minute cookie lifespan (in milliseconds)
 }));
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+});
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+});
 
 // signup route with placeholder response
 app.get('/signup', function(req, res){
@@ -72,7 +87,6 @@ app.get('/profile', function (req, res) {
   });
 });
 
-
 // Logout route
 app.get('/logout', function (req, res) {
   // remove the session user id
@@ -81,7 +95,11 @@ app.get('/logout', function (req, res) {
   res.redirect('/login');
 });
 
+app.get('/', function (req, res){
+	res.render('index');
+});
+
 // listen on port 3000
-app.listen(3000, function(){
+http.listen(3000, function(){
 	console.log('server is alive on localhost:3000');
 });
