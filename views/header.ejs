@@ -17,9 +17,7 @@
   <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
   <!-- Socket IO -->
   <script src="/socket.io/socket.io.js"></script>
-  <script>
-    var socket = io();
-  </script>
+
   
  
   <script src='/js/lib/jquery.min.js'></script>
@@ -29,6 +27,14 @@
 
   <!-- Custom -->
   <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <!-- Chat -->
+  <script src="/js/chat.js"></script>
+  <!-- Particles -->
+ 
+
+  <script type="text/javascript" src="/js/particles.js"></script>
+ 
+
   <script src="scripts.js"></script>
   <script type="text/javascript" src="/js/lib/jquery.easing.1.3.js"></script>
  
@@ -53,14 +59,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
    
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Menu <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#signup-modal" data-toggle="modal" class="logged-out">Sign Up </a></li>
             <li><a href="#login-modal" data-toggle="modal" class="logged-out">Login</a></li>
   
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div><!-- /.navbar-collapse -->
  
@@ -137,10 +143,23 @@
        <h4 class="modal-title" id="signUpModalLabel">Chat Room</h4>
      </div>
      <div class="modal-body">
-       <ul id="messages"></ul>
-       <form action="">
-         <input id="m" autocomplete="off" /><button>Send</button>
-       </form>
+       <ul class="pages">
+         <li class="chat page">
+           <div class="chatArea">
+             <ul class="messages"></ul>
+           </div>
+           <input class="inputMessage" placeholder="Type here..."/>
+         </li>
+            <div class="form-group">
+              <input type="text" name="usernameinput" class="usernameInput" placeholder="Username" maxlength="14" required>
+            </div>
+         <!-- <li class="login page">
+           <div class="form">
+             <h1 class="title">What's your nickname?</h1>
+             <input class="usernameInput" type="text" maxlength="14" />
+           </div>
+         </li> -->
+       </ul>
      </div>
      <div class="modal-footer">
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -149,7 +168,7 @@
  </div>
 </div>
 <!-- End Modal for socket --> 
-     
+ <div id="particles-js"></div>    
 </header>
 
 

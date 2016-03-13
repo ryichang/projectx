@@ -1,8 +1,13 @@
 // scripts.js
 console.log("sanity check!");
 
-$(document).ready(function(){
+//Menu jQuery
+$(".menu").click(function(){
+  $(this).toggleClass("open");
+});
 
+$(document).ready(function(){
+	particlesJS();
 
 // select the form and serialize data 
 // var signupData = $("#signup-form").serialize();
@@ -21,28 +26,12 @@ $(document).ready(function(){
 // 	$.post('/login', loginData, function(response){
 // 		console.log(response);
 // 	});
-//config
-
-
-var socket = io();
-$('form').submit(function(){
-  socket.emit('chat message', $('#m').val());
-  $('#m').val('');
-  return false;
-});
-socket.on('chat message', function(msg){
-  $('#messages').append($('<li>').text(msg));
-});
-
-
-
-
-
+// config
 
 $float_speed=1500; //milliseconds
 $float_easing="easeOutQuint";
 $menu_fade_speed=500; //milliseconds
-$closed_menu_opacity=0.75;
+$closed_menu_opacity=1;
 
 //cache vars
 $fl_menu=$("#fl_menu");

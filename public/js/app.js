@@ -1,3 +1,4 @@
-$(".menu").click(function(){
-  $(this).toggleClass("open");
-});
+// $(".menu").click(function(){
+//   $(this).toggleClass("open");
+// });
+
