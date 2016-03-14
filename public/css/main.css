@@ -34,8 +34,19 @@ canvas{
   float: left;
   display:block;
   vertical-align:bottom;
+  margin-top: -80px;
 }
 
+@media only screen and (max-width: 500px) {
+    canvas{
+      float: left;
+      display:block;
+      vertical-align:bottom;
+      margin-top: -80px;
+      width: 350px;
+      height: 100px;
+    }
+}
 
 media (max-width: @screen-xs-min) {
   .modal-xs { width: @modal-md-12; }
@@ -43,11 +54,11 @@ media (max-width: @screen-xs-min) {
 
 .modal-dialog{
 position: absolute;
-left: 0%;
-margin-left: 100px;
+left: 30%;
+/*margin-left: 100px;*/
 /*height: 500px;*/
-top: 50%;
-margin-top: -200px;
+top: 20%;
+/*margin-top: -200px;*/
 /*-moz-box-sizing: border-box;
 -webkit-box-sizing: border-box;
 box-sizing: border-box;

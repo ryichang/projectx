@@ -9,6 +9,8 @@ $(".menu").click(function(){
 $(document).ready(function(){
 	particlesJS();
 
+
+
 // select the form and serialize data 
 // var signupData = $("#signup-form").serialize();
 // console.log(signupData);

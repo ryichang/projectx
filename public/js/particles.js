@@ -7,18 +7,18 @@ function launchParticlesJS(a, e) {
       h: i.offsetHeight
     },
     particles: {
-      color: "#000",
+      color: "#454545",
       shape: "polygon",
       opacity: 1,
       size: 2.5,
       size_random: true,
-      nb: 20,
+      nb: 30,
       line_linked: {
         enable_auto: true,
         distance: 100,
         color: "#000",
         opacity: 1,
-        width: 1,
+        width: 0.7,
         condensed_mode: {
           enable: true,
           rotateX: 65000,
@@ -27,7 +27,7 @@ function launchParticlesJS(a, e) {
       },
       anim: {
         enable: true,
-        speed: 3
+        speed: 2
       },
       array: []
     },
@@ -45,7 +45,7 @@ function launchParticlesJS(a, e) {
         onclick: {
           enable: true,
           mode: "push",
-          nb: 4
+          nb: 3
         }
       }
     },
