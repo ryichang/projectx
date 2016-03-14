@@ -8,9 +8,9 @@ function launchParticlesJS(a, e) {
     },
     particles: {
       color: "#454545",
-      shape: "polygon",
+      shape: "circle",
       opacity: 1,
-      size: 2.5,
+      size: 6,
       size_random: true,
       nb: 30,
       line_linked: {
