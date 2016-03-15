@@ -8,8 +8,16 @@ $(".menu").click(function(){
 
 $(document).ready(function(){
 	particlesJS();
+//Prevent input with no value entered
 
-
+// var inputMessage = $('#inputMessage');
+// inputMessage.submit(function(e){
+// 	e.preventDefault();
+// });
+	$('.submit').prop('disabled',true); 
+	  $('#inputMessage').keyup(function(){ 
+	      $('.submit').prop('disabled', this.value === "" ? true : false); 
+	  }); 
 
 // select the form and serialize data 
 // var signupData = $("#signup-form").serialize();
@@ -30,6 +38,7 @@ $(document).ready(function(){
 // 	});
 // config
 
+// Floating Menu 
 $float_speed=1500; //milliseconds
 $float_easing="easeOutQuint";
 $menu_fade_speed=500; //milliseconds

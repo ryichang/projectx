@@ -430,8 +430,8 @@ window.particlesJS = function(d, c) {
     d = "particles-js"
   }
   var b = document.createElement("canvas");
-  b.style.width = "350px";
-  b.style.height = "350px";
+  b.style.width = "100%";
+  b.style.height = "150px";
   var a = document.getElementById(d).appendChild(b);
   if (a != null) {
     launchParticlesJS(d, c)
