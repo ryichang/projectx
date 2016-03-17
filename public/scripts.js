@@ -38,6 +38,23 @@ $(document).ready(function(){
 // 	});
 // config
 
+//nav on scroll 
+$(function () { 
+    var down = false;
+    var menuOn = false;
+    $(window).on('scroll', function() {
+        var scrollTop = $(this).scrollTop();    
+        if ( scrollTop > 60 && down === false) {
+            $('#header').animate({"top": 0}, 300 );
+            down = true;
+        } 
+        if ( scrollTop < 60 && down === true) {
+            $('#header').animate({"top": -200}, 300 );
+            down = false;
+        }
+    });            
+});
+
 // Floating Menu 
 $float_speed=1500; //milliseconds
 $float_easing="easeOutQuint";
