@@ -6,14 +6,16 @@ body {
 	color: #454545;
 	}
 
+p {
+  font-family: Hack, monospace;
+}
 
 h1 {
   color: #454545;
-  font-size: 50px;
-  letter-spacing: 0.4em;
+  /*font-size: 34px;
+  letter-spacing: 0.3em;*/
   weight: 700;
 }
-
 
 /*
 .navbar {
@@ -28,6 +30,54 @@ h1 {
    width: 100%
 }*/
 
+
+.instagram {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #;
+}
+.instagram-gallery{
+  min-width:300px;
+}
+.instagram-img{
+  width:80px;
+  float:left;
+  margin:5px;
+  position:relative;
+  background:#454545;
+/*  box-shadow:0 1px 1px rgba(0,0,0,0.4);*/
+}
+.instagram-gallery .imagebox img{
+  width:80px;
+  height:80px;
+  display:block;
+}
+.instagram-gallery .imagebox .likes{
+  position:absolute;
+  top:45px;
+  left: 0px;
+  padding:5px 5px 5px 20px;
+  background:transparent url(https://abs.twimg.com/emoji/v1/72x72/2665.png) no-repeat;
+  background-size:10px;
+  background-position:5px;
+  color:#fff;
+  font-size: 11px;
+}
+
+.article-title {
+  padding: 5px 5px 5px 10px;
+  color: #fff;
+  font-weight: 500;
+  background-image: linear-gradient(
+      to right top,
+      transparent 33%,
+      #454545 33%,
+      #454545 66%,
+      transparent 66%
+  );
+  background-size: 3px 3px;
+
+}
 
 .hoverlink{
   color: #454545 !important;
@@ -51,7 +101,7 @@ h1 {
 }
 
 #header{
-    position: relative;
+    position: fixed;
     top: -100px;
     width: 350px; height:30px;
     padding: 20px;
@@ -67,11 +117,11 @@ h1 {
 
 .page-content {
 	position: relative;
+  margin-top: 90px;
 	z-index: 0;
 }
 
-
-.sidebar {
+.chat-sidebar {
   display: nne;
   -webkit-transition: all 0.2s ease-out 0s;
   -moz-transition: all 0.2s ease-out 0s;
@@ -91,16 +141,51 @@ h1 {
   z-index: 0;
 }
 
-#sidebar-toggle {
+#chat-toggle {
   display: none;
 }
-#sidebar-toggle:checked + .page-wrap .sidebar {
+#chat-toggle:checked + .page-wrap .chat-sidebar {
   left: 0px;
 }
-#sidebar-toggle:checked + .page-wrap .toggle {
+#chat-toggle:checked + .page-wrap .toggle {
   left: 300px;
 }
-#sidebar-toggle:checked + .page-wrap .page-content {
+#chat-toggle:checked + .page-wrap .page-content {
+  padding-right: 0px;
+}
+
+
+
+.contact-sidebar {
+  display: nne;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+  position: fixed;
+  top: 250px;
+  right: 0;
+  bottom: 0;
+  left: -380px;
+  height: 400px;
+  width: 350px;
+  padding: 15px;
+  background-color: rgba(245,245,245, 0.9);
+  color: #454545;
+  border-style: solid;
+  border-width: 1px;
+  z-index: 0;
+}
+
+#contact-toggle {
+  display: none;
+}
+#contact-toggle:checked + .page-wrap .contact-sidebar {
+  left: 0px;
+}
+#contact-toggle:checked + .page-wrap .toggle {
+  left: 300px;
+}
+#contact-toggle:checked + .page-wrap .page-content {
   padding-right: 0px;
 }
 
@@ -130,6 +215,7 @@ canvas{
       margin-top: -80px;
       width: 350px;
       height: 100px;
+      z-index: -1;
     }
 }
 

@@ -14,6 +14,24 @@ $(document).ready(function(){
 // inputMessage.submit(function(e){
 // 	e.preventDefault();
 // });
+
+$.ajax({
+    type: "GET",
+    dataType: "jsonp",
+    url: "https://api.instagram.com/v1/users/2191727/media/recent?access_token=2191727.73fb6de.b45bbbba7d54487dbf936f996b1203fb&count=12",
+    success: function (json) {
+        $.each(json.data, function () {
+            var thisdata = this;
+            $('.instagram-gallery').append("<div class='instagram-img'><div class='imagebox'><span class='likes'>" + this.likes.count + "</span><img src='" + this.images.thumbnail.url + "'/></div></div>");
+        });
+        var $container = $('.instagram-gallery');
+        // initialize
+        $container.masonry({
+            itemSelector: '.instagram-img'
+        });
+    }
+});
+
 	$('.submit').prop('disabled',true); 
 	  $('#inputMessage').keyup(function(){ 
 	      $('.submit').prop('disabled', this.value === "" ? true : false); 
@@ -95,4 +113,5 @@ function FloatMenu(){
 	}
 }
 });
+
 
