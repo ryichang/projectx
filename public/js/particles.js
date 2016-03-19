@@ -8,11 +8,11 @@ function launchParticlesJS(a, e) {
     },
     particles: {
       color: "#454545",
-      shape: "polygon",
+      shape: "circle",
       opacity: 1,
       size: 6,
       size_random: true,
-      nb: 30,
+      nb: 40,
       line_linked: {
         enable_auto: true,
         distance: 100,
