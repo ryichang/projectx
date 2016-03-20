@@ -45,7 +45,7 @@ function launchParticlesJS(a, e) {
         onclick: {
           enable: true,
           mode: "push",
-          nb: 3
+          nb: 4
         }
       }
     },
@@ -431,7 +431,7 @@ window.particlesJS = function(d, c) {
   }
   var b = document.createElement("canvas");
   b.style.width = "100%";
-  b.style.height = "540px";
+  b.style.height = "550px";
   var a = document.getElementById(d).appendChild(b);
   if (a != null) {
     launchParticlesJS(d, c)

@@ -15,12 +15,12 @@ $(document).ready(function(){
 // 	e.preventDefault();
 // });
 var container = document.querySelector('#masonry');
-  var masonry = new Masonry(container, {
+  var sasonry = new Masonry(container, {
     columnWidth: 50,
     itemSelector: '.item'
   });
 
-  
+
 $.ajax({
     type: "GET",
     dataType: "jsonp",

@@ -8,15 +8,21 @@ body {
 
 p {
   font-family: Hack, monospace;
+  font-size: 11px;
 }
 
 h1 {
   color: #454545;
-  /*font-size: 34px;
-  letter-spacing: 0.3em;*/
+  font-size: 34px;
+  letter-spacing: 0.3em;
   weight: 700;
+  position: rleative-inline;
 }
 
+.jumbotron {
+  background-color: transparent;
+
+}
 /*
 .navbar {
    background-color: transparent;
@@ -80,7 +86,7 @@ h1 {
 }
 
 .hoverlink{
-  color: #454545 !important;
+  color: #fff !important;
   text-decoration:none !important;
   display: inline-block;
   text-decoration: none;
@@ -201,7 +207,7 @@ h1 {
   background-position: 50% 50%;
 }
 canvas{
-  float: left;
+  float: center;
   display:relative;
   vertical-align:bottom;
   margin-top: -100px;
