@@ -8,7 +8,8 @@ body {
 
 p {
   font-family: Hack, monospace;
-  font-size: 11px;
+  font-size: 12px;
+  line-height: 2.5em;
 }
 
 h1 {
@@ -21,7 +22,7 @@ h1 {
 
 .jumbotron {
   background-color: transparent;
-
+  margin-top: -100px;
 }
 /*
 .navbar {
@@ -60,7 +61,7 @@ h1 {
 }
 .instagram-gallery .imagebox .likes{
   position:absolute;
-  top:45px;
+  top:50px;
   left: 0px;
   padding:5px 5px 5px 20px;
   background:transparent url(https://abs.twimg.com/emoji/v1/72x72/2665.png) no-repeat;
