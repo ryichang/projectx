@@ -80,7 +80,7 @@ $(function () {
 });
 
 // Floating Menu 
-$float_speed=1500; //milliseconds
+$float_speed=0; //milliseconds
 $float_easing="easeOutQuint";
 $menu_fade_speed=500; //milliseconds
 $closed_menu_opacity=1;

@@ -12,7 +12,7 @@ function launchParticlesJS(a, e) {
       opacity: 1,
       size: 6,
       size_random: true,
-      nb: 40,
+      nb: 100,
       line_linked: {
         enable_auto: true,
         distance: 100,
