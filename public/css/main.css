@@ -89,10 +89,11 @@ h1 {
 
 time {
   float: right;
+  font-weight: 700;
   font-size: 12px;
   padding-left: 5px;
-  background-color: rgba(0,0,0,0.6);
- /* background-image: linear-gradient(
+  background-color: rgba(245, 245, 245, 0.8);
+  /*background-image: linear-gradient(
       to right top,
       transparent 33%,
       #000 33%,
@@ -103,14 +104,14 @@ time {
 }
 
 .hoverlink{
-  color: #fff !important;
+  color: #454545 !important;
   text-decoration:none !important;
   display: inline-block;
   text-decoration: none;
 }
 
 .hoverlinkicons{
-  color: #fff !important;
+  color: #454545 !important;
   text-decoration:none !important;
   display: inline-block;
   text-decoration: none;
@@ -127,7 +128,7 @@ time {
 
 .hoverlinkicons:hover:after {
   width: 100%;
-  background: #fff;
+  background: #454545;
 }
 
 .hoverlink:after {
@@ -141,7 +142,7 @@ time {
 
 .hoverlink:hover:after {
   width: 100%;
-  background: #fff;
+  background: #454545;
 }
 
 #header{
@@ -149,13 +150,13 @@ time {
     top: -100px;
     width: 100%; height:50px;
     padding: 20px;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(245,245,245,0.9);
     border-color: transparent;
     font-family: 'Helvetica', sans-serif; 
     font-size: 20px;
     font-weight: 200;
     letter-spacing: 7px;
-    color: #fff;
+    color: #454545;
     z-index: 200;
 }
 
@@ -574,12 +575,13 @@ li {
   outline: none;
  /* padding-bottom: 15px;*/
   text-align: center;
-  width: 350px;
+  width: 300px;
   height: 40px;
 }
 
 .login.page .title {
-  width: 100%;
+  width: 300px;
+  padding: 5px 5px 5px 5px;
 /*  margin-top: 100px;*/
   background-color: #000;
   font-size: 200%;
@@ -659,3 +661,5 @@ li {
   right: 0;
   width: 100%;
 }
+
+

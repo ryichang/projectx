@@ -8,7 +8,10 @@
  * Copyright 2015, Codrops
  * http://www.codrops.com
  */
-;(function(window) {
+
+
+$(document).ready(function(){
+
 	
 	'use strict';
 
@@ -247,4 +250,5 @@
 
 	window.TiltFx = TiltFx;
 
-})(window);
+
+});
